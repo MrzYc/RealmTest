@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2460A02C1EF38C0A00C11CA1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2460A02B1EF38C0A00C11CA1 /* logo.png */; };
+		2460A0321EF3B7AA00C11CA1 /* RelationA.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460A0311EF3B7AA00C11CA1 /* RelationA.m */; };
+		2460A0351EF3B7B100C11CA1 /* RelationB.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460A0341EF3B7B100C11CA1 /* RelationB.m */; };
+		2460A0381EF3C55100C11CA1 /* EmptyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2460A0371EF3C55100C11CA1 /* EmptyValue.m */; };
 		248D1CB41EF1199000A062B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D1CB31EF1199000A062B4 /* main.m */; };
 		248D1CB71EF1199000A062B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D1CB61EF1199000A062B4 /* AppDelegate.m */; };
 		248D1CBA1EF1199100A062B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D1CB91EF1199100A062B4 /* ViewController.m */; };
@@ -18,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2460A02B1EF38C0A00C11CA1 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		2460A0301EF3B7AA00C11CA1 /* RelationA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationA.h; sourceTree = "<group>"; };
+		2460A0311EF3B7AA00C11CA1 /* RelationA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationA.m; sourceTree = "<group>"; };
+		2460A0331EF3B7B100C11CA1 /* RelationB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationB.h; sourceTree = "<group>"; };
+		2460A0341EF3B7B100C11CA1 /* RelationB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationB.m; sourceTree = "<group>"; };
+		2460A0361EF3C55100C11CA1 /* EmptyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyValue.h; sourceTree = "<group>"; };
+		2460A0371EF3C55100C11CA1 /* EmptyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyValue.m; sourceTree = "<group>"; };
 		248D1CAF1EF1199000A062B4 /* RealmTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		248D1CB31EF1199000A062B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		248D1CB51EF1199000A062B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +93,7 @@
 				248D1CB81EF1199100A062B4 /* ViewController.h */,
 				248D1CB91EF1199100A062B4 /* ViewController.m */,
 				248D1CBB1EF1199100A062B4 /* Main.storyboard */,
+				2460A02B1EF38C0A00C11CA1 /* logo.png */,
 				248D1CBE1EF1199200A062B4 /* Assets.xcassets */,
 				248D1CC01EF1199300A062B4 /* LaunchScreen.storyboard */,
 				248D1CC31EF1199300A062B4 /* Info.plist */,
@@ -104,6 +116,12 @@
 			children = (
 				248D1CCD1EF1223000A062B4 /* Stu.h */,
 				248D1CCE1EF1223000A062B4 /* Stu.m */,
+				2460A0301EF3B7AA00C11CA1 /* RelationA.h */,
+				2460A0311EF3B7AA00C11CA1 /* RelationA.m */,
+				2460A0331EF3B7B100C11CA1 /* RelationB.h */,
+				2460A0341EF3B7B100C11CA1 /* RelationB.m */,
+				2460A0361EF3C55100C11CA1 /* EmptyValue.h */,
+				2460A0371EF3C55100C11CA1 /* EmptyValue.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2460A02C1EF38C0A00C11CA1 /* logo.png in Resources */,
 				248D1CC21EF1199300A062B4 /* LaunchScreen.storyboard in Resources */,
 				248D1CBF1EF1199200A062B4 /* Assets.xcassets in Resources */,
 				248D1CBD1EF1199100A062B4 /* Main.storyboard in Resources */,
@@ -240,8 +259,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				248D1CCF1EF1223000A062B4 /* Stu.m in Sources */,
+				2460A0321EF3B7AA00C11CA1 /* RelationA.m in Sources */,
 				248D1CBA1EF1199100A062B4 /* ViewController.m in Sources */,
 				248D1CB71EF1199000A062B4 /* AppDelegate.m in Sources */,
+				2460A0381EF3C55100C11CA1 /* EmptyValue.m in Sources */,
+				2460A0351EF3B7B100C11CA1 /* RelationB.m in Sources */,
 				248D1CB41EF1199000A062B4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

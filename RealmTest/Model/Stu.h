@@ -7,14 +7,21 @@
 //
 
 #import <Realm/Realm.h>
+#import <UIKit/UIKit.h>
+
 
 @interface Stu : RLMObject
 
 @property int num;
 @property NSString *name;
+@property (readonly) UIImage *image; //忽略image
+@property NSData *imageData;
+//@property NSArray <NSString *>*arrays2;
+// RLMArray 这个集合,有个要求,
+// 里面存储的属性, 必须, 是继承自 RLMObject 类型的属性
+
+
 
 @end
 
-// This protocol enables typed collections. i.e.:
-// RLMArray<Stu *><Stu>
-RLM_ARRAY_TYPE(Stu)
+

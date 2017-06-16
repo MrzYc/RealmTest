@@ -1,24 +1,15 @@
+
 //
-//  Stu.m
+//  EmptyValue.m
 //  RealmTest
 //
-//  Created by Circcus on 2017/6/14.
+//  Created by Circcus on 2017/6/16.
 //  Copyright © 2017年 com.circcus. All rights reserved.
 //
 
-#import "Stu.h"
+#import "EmptyValue.h"
 
-@implementation Stu
-
-
-
-+ (NSString *)primaryKey {
-    return @"num";
-}
-
-- (UIImage *)image {
-    return [UIImage imageWithData:self.imageData];
-}
+@implementation EmptyValue
 
 // Specify default values for properties
 

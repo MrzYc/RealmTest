@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import <Realm/Realm.h>
 #import "Stu.h"
+#import "RelationA.h"
+#import "RelationB.h"
+#import "EmptyValue.h"
 
 @interface ViewController ()
 
@@ -41,7 +44,13 @@
 //    [self realmDeleModel];
     
     //查询数据库
-    [self realmSearch];
+//    [self realmSearch];
+    
+//    [self supportdataType];
+    
+//    [self realmRelaion];
+    
+    [self emptyRealm];
     
     
 }
@@ -119,11 +128,12 @@
 //realm 查询
 - (void)realmSearch {
     
+    /*
     // 1. 所有的查询（包括查询和属性访问）在 Realm 中都是延迟加载的，只有当属性被访问时，才能够读取相应的数据
     RLMResults *stuRes = [Stu allObjects];
     NSLog(@"%@", stuRes);
     
-    Stu *stu = [[Stu alloc] initWithValue:@[@3,@"土豆"]];
+    Stu *stu = [[Stu alloc] initWithValue:@[@4,@"土豆"]];
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm transactionWithBlock:^{
@@ -131,7 +141,106 @@
     }];
     
     NSLog(@"%@", stuRes);
+     
+     **/
+    
+
+    
+    RLMResults<Stu *> *stus = [Stu objectsWhere:@"num > 1"];
+    NSLog(@"%@", stus);
+    
+    RLMResults *sortRes = [stus sortedResultsUsingKeyPath:@"name" ascending:NO];
+    NSLog(@"%@", sortRes);
+    
+    //链式查询 -- 连续使用查询语句
+    RLMResults *subRes = [stus objectsWhere:@"num > 2"];
+    [subRes objectsWhere:@"num > 3"];
+    
+    //    sql
+    // 第一个参数: 跳过几条
+    // 第二个参数, 取多少条
+    //    select * from stu limit 3,3;
+    //
+    RLMResults *allObj = [Stu allObjects];
+    for (int i= 3; i < allObj.count; i ++) {
+        Stu *stu = allObj[i];
+        NSLog(@"%@", stu);
+    }
+}
+
+
+//支持的数据类型
+- (void)supportdataType {
+    
+    Stu *stu = [[Stu alloc] init];
+    stu.name = @"王小二";
+    stu.num = 2;
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"logo.png" ofType:nil];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    stu.imageData = data;
+    //    stu.image = [UIImage imageNamed:@"a.png"];
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        //        [realm addObject:stu];
+        [realm addOrUpdateObject:stu];
+    }];
+}
+
+
+//存储关系
+- (void)realmRelaion {
+//    RelationA *A = [[RelationA alloc] init];
+//    A.num = 1;
+//    A.name = @"A";
+//   
+//    
+//    RelationB *pet1 = [RelationB new];
+//    pet1.name = @"B1";
+//    pet1.num = 1;
+//
+//    
+//    RelationB *pet2 = [RelationB new];
+//    pet2.name = @"B2";
+//    pet2.num = 2;
+//
+//    [A.pets addObject:pet1];
+//    [A.pets addObject:pet2];
+//    
+//    
+//    RLMRealm *realm = [RLMRealm defaultRealm];
+//    [realm transactionWithBlock:^{
+//        [realm addObject:A];
+//    }];
+    
+    
+    RelationA *result = [RelationA allObjects].firstObject;
+    NSLog(@"%@",result.pets.firstObject.master);
+
+}
+
+//给reaml 赋空值
+- (void)emptyRealm {
+    
+    EmptyValue *empty = [[EmptyValue alloc] init];
+    empty.a = 1;
+        
+    //1.获取realm对象
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    //2.开启写入事物
+    [realm beginWriteTransaction];
+    //3.执行修改动作
+    [realm addObject:empty];
+    //4.提交写入事物
+    [realm commitWriteTransaction];
+    
+    [realm transactionWithBlock:^{
+        [realm addObject:empty];
+    }];
+    
     
 }
+
 
 @end
